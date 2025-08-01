@@ -1,10 +1,10 @@
 import { ReactElement, createElement } from "react";
 import { TodoList } from "./components/TodoList";
-import { SingleWidgetContainerProps } from "../typings/SingleWidgetProps";
+import { TodoListContainerWidgetContainerProps } from "../typings/TodoListContainerWidgetProps";
 
-import "./ui/SingleWidget.css";
+import "./ui/TodoListContainerWidget.css";
 
-export function SingleWidget(props: SingleWidgetContainerProps): ReactElement {
+export function TodoListContainerWidget(props: TodoListContainerWidgetContainerProps): ReactElement {
     const {
         todoItems,
         titleAttribute,

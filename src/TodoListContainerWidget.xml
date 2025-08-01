@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <widget
-    id="mendix.singlewidget.SingleWidget"
-    pluginWidget="true"
-    needsEntityContext="true"
-    offlineCapable="true"
-    supportedPlatform="Web"
-    xmlns="http://www.mendix.com/widget/1.0/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
->
-    <name>Todo List Widget</name>
+  id="mendix.todolistcontainerwidget.TodoListContainerWidget"
+  pluginWidget="true"
+  needsEntityContext="true"
+  offlineCapable="true"
+  supportedPlatform="Web"
+  xmlns="http://www.mendix.com/widget/1.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Todo List Container Widget</name>
     <description>A todo list widget that displays and manages todo items</description>
     <icon />
     <properties>
@@ -41,27 +40,21 @@
             </property>
             <property key="createdDateAttribute" type="attribute" dataSource="todoItems" required="false">
                 <caption>Created Date Attribute</caption>
-                <description>
-                    DateTime attribute showing when the todo item was created (displayed in hover tooltip)
-                </description>
+                <description>DateTime attribute showing when the todo item was created (displayed in hover tooltip)</description>
                 <attributeTypes>
                     <attributeType name="DateTime" />
                 </attributeTypes>
             </property>
             <property key="ownerAttribute" type="attribute" dataSource="todoItems" required="false">
                 <caption>Owner Attribute</caption>
-                <description>
-                    String attribute showing who created the todo item (displayed in hover tooltip)
-                </description>
+                <description>String attribute showing who created the todo item (displayed in hover tooltip)</description>
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
             <property key="changedByAttribute" type="attribute" dataSource="todoItems" required="false">
                 <caption>Changed By Attribute</caption>
-                <description>
-                    String attribute showing who last modified the todo item (displayed in hover tooltip)
-                </description>
+                <description>String attribute showing who last modified the todo item (displayed in hover tooltip)</description>
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>

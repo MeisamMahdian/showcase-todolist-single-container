@@ -1,9 +1,9 @@
 import { ReactElement, createElement } from "react";
 import { TodoList } from "./components/TodoList";
-import { SingleWidgetPreviewProps } from "../typings/SingleWidgetProps";
+import { TodoListContainerWidgetPreviewProps } from "../typings/TodoListContainerWidgetProps";
 import { ListValue } from "mendix";
 
-export function preview(props: SingleWidgetPreviewProps): ReactElement {
+export function preview(props: TodoListContainerWidgetPreviewProps): ReactElement {
     const { showAddButton, newItemPlaceholder } = props;
 
     // Mock ListValue for preview
@@ -38,5 +38,5 @@ export function preview(props: SingleWidgetPreviewProps): ReactElement {
 }
 
 export function getPreviewCss(): string {
-    return require("./ui/SingleWidget.css");
+    return require("./ui/TodoListContainerWidget.css");
 }

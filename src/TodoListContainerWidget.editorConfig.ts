@@ -1,4 +1,4 @@
-import { SingleWidgetPreviewProps } from "../typings/SingleWidgetProps";
+import { TodoListContainerWidgetPreviewProps } from "../typings/TodoListContainerWidgetProps";
 
 export type Platform = "web" | "desktop";
 
@@ -100,7 +100,7 @@ export type PreviewProps =
     | DatasourceProps;
 
 export function getProperties(
-    _values: SingleWidgetPreviewProps,
+    _values: TodoListContainerWidgetPreviewProps,
     defaultProperties: Properties /* , target: Platform*/
 ): Properties {
     // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.

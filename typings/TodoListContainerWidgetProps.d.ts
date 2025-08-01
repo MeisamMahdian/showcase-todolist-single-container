@@ -1,12 +1,12 @@
 /**
- * This file was generated from SingleWidget.xml
+ * This file was generated from TodoListContainerWidget.xml
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
 import { ActionValue, EditableValue, ListValue, ListActionValue, ListAttributeValue } from "mendix";
 
-export interface SingleWidgetContainerProps {
+export interface TodoListContainerWidgetContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
@@ -27,7 +27,7 @@ export interface SingleWidgetContainerProps {
     newItemPlaceholder: string;
 }
 
-export interface SingleWidgetPreviewProps {
+export interface TodoListContainerWidgetPreviewProps {
     /**
      * @deprecated Deprecated since version 9.18.0. Please use class property instead.
      */
