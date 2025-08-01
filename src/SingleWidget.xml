@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="mendix.singlewidget.SingleWidget"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Todo List Widget</name>
+    <description>A todo list widget that displays and manages todo items</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="Data Source">
+            <property key="todoItems" type="datasource" isList="true" required="true">
+                <caption>Todo Items</caption>
+                <description>Data source containing the todo items</description>
+            </property>
+            <property key="titleAttribute" type="attribute" dataSource="todoItems" required="true">
+                <caption>Title Attribute</caption>
+                <description>Attribute containing the todo item title</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="completedAttribute" type="attribute" dataSource="todoItems" required="true">
+                <caption>Completed Attribute</caption>
+                <description>Boolean attribute indicating if the todo item is completed</description>
+                <attributeTypes>
+                    <attributeType name="Boolean" />
+                </attributeTypes>
+            </property>
+            <property key="changedDateAttribute" type="attribute" dataSource="todoItems" required="false">
+                <caption>Changed Date Attribute</caption>
+                <description>DateTime attribute showing when the todo item was last modified</description>
+                <attributeTypes>
+                    <attributeType name="DateTime" />
+                </attributeTypes>
+            </property>
+            <property key="createdDateAttribute" type="attribute" dataSource="todoItems" required="false">
+                <caption>Created Date Attribute</caption>
+                <description>
+                    DateTime attribute showing when the todo item was created (displayed in hover tooltip)
+                </description>
+                <attributeTypes>
+                    <attributeType name="DateTime" />
+                </attributeTypes>
+            </property>
+            <property key="ownerAttribute" type="attribute" dataSource="todoItems" required="false">
+                <caption>Owner Attribute</caption>
+                <description>
+                    String attribute showing who created the todo item (displayed in hover tooltip)
+                </description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="changedByAttribute" type="attribute" dataSource="todoItems" required="false">
+                <caption>Changed By Attribute</caption>
+                <description>
+                    String attribute showing who last modified the todo item (displayed in hover tooltip)
+                </description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Actions">
+            <property key="itemTextAttribute" type="attribute" required="false">
+                <caption>Item Text Attribute</caption>
+                <description>Attribute to store the item text for add and edit operations</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="onAddAction" type="action" required="false">
+                <caption>On Add Action</caption>
+                <description>Action to execute when adding a new todo item</description>
+            </property>
+            <property key="onToggleAction" type="action" required="false" dataSource="todoItems">
+                <caption>On Toggle Action</caption>
+                <description>Action to execute when toggling a todo item's completion status</description>
+            </property>
+            <property key="onEditAction" type="action" required="false" dataSource="todoItems">
+                <caption>On Edit Action</caption>
+                <description>Action to execute when editing a todo item</description>
+            </property>
+            <property key="onDeleteAction" type="action" required="false" dataSource="todoItems">
+                <caption>On Delete Action</caption>
+                <description>Action to execute when deleting a todo item</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Appearance">
+            <property key="showAddButton" type="boolean" defaultValue="true">
+                <caption>Show Add Button</caption>
+                <description>Show button to add new todo items</description>
+            </property>
+            <property key="newItemPlaceholder" type="string" required="false">
+                <caption>New Item Placeholder</caption>
+                <description>Placeholder text for the new todo item input</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
