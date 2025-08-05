@@ -18,7 +18,9 @@ export interface TodoListContainerWidgetContainerProps {
     createdDateAttribute?: ListAttributeValue<Date>;
     ownerAttribute?: ListAttributeValue<string>;
     changedByAttribute?: ListAttributeValue<string>;
+    dueDateAttribute?: ListAttributeValue<Date>;
     itemTextAttribute?: EditableValue<string>;
+    dueDateInputAttribute?: EditableValue<Date>;
     onAddAction?: ActionValue;
     onToggleAction?: ListActionValue;
     onEditAction?: ListActionValue;
@@ -45,7 +47,9 @@ export interface TodoListContainerWidgetPreviewProps {
     createdDateAttribute: string;
     ownerAttribute: string;
     changedByAttribute: string;
+    dueDateAttribute: string;
     itemTextAttribute: string;
+    dueDateInputAttribute: string;
     onAddAction: {} | null;
     onToggleAction: {} | null;
     onEditAction: {} | null;

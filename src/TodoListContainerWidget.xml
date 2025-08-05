@@ -59,6 +59,13 @@
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
+            <property key="dueDateAttribute" type="attribute" dataSource="todoItems" required="false">
+                <caption>Due Date Attribute</caption>
+                <description>DateTime attribute showing when the todo item is due</description>
+                <attributeTypes>
+                    <attributeType name="DateTime" />
+                </attributeTypes>
+            </property>
         </propertyGroup>
         <propertyGroup caption="Actions">
             <property key="itemTextAttribute" type="attribute" required="false">
@@ -66,6 +73,13 @@
                 <description>Attribute to store the item text for add and edit operations</description>
                 <attributeTypes>
                     <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="dueDateInputAttribute" type="attribute" required="false">
+                <caption>Due Date Input Attribute</caption>
+                <description>DateTime attribute to store the due date input for add and edit operations</description>
+                <attributeTypes>
+                    <attributeType name="DateTime" />
                 </attributeTypes>
             </property>
             <property key="onAddAction" type="action" required="false">
