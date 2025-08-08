@@ -1,18 +1,21 @@
 # Todo List Widget
 
+**[Note: This code has been generated mainly by copilot as an example. It has not passed quality controls to be used in
+production]**
+
 A Mendix pluggable widget that provides a fully functional todo list interface with add, toggle, and display
 capabilities.
 
 ## Features
 
--   **Display Todo Items**: Shows a list of todo items from a Mendix data source
--   **Add New Items**: Allows users to add new todo items with a simple input interface
--   **Toggle Completion**: Users can check/uncheck items to mark them as completed
--   **Edit Items**: Edit button for each todo item to trigger custom edit actions
--   **Delete Items**: Delete button for each todo item with hover-to-reveal UI
--   **Responsive Design**: Mobile-friendly interface that adapts to different screen sizes
--   **Modern UI**: Clean, card-based design with hover effects and smooth transitions
--   **Customizable**: Configurable placeholder text and comprehensive action system
+- **Display Todo Items**: Shows a list of todo items from a Mendix data source
+- **Add New Items**: Allows users to add new todo items with a simple input interface
+- **Toggle Completion**: Users can check/uncheck items to mark them as completed
+- **Edit Items**: Edit button for each todo item to trigger custom edit actions
+- **Delete Items**: Delete button for each todo item with hover-to-reveal UI
+- **Responsive Design**: Mobile-friendly interface that adapts to different screen sizes
+- **Modern UI**: Clean, card-based design with hover effects and smooth transitions
+- **Customizable**: Configurable placeholder text and comprehensive action system
 
 ## Configuration
 
@@ -20,50 +23,50 @@ capabilities.
 
 1. **Todo Items** (required)
 
-    - Type: Data source (list)
-    - Description: The data source containing your todo items
+   - Type: Data source (list)
+   - Description: The data source containing your todo items
 
 2. **Title Attribute** (required)
 
-    - Type: String attribute
-    - Description: The attribute that contains the todo item text/title
+   - Type: String attribute
+   - Description: The attribute that contains the todo item text/title
 
 3. **Completed Attribute** (required)
 
-    - Type: Boolean attribute
-    - Description: The attribute that tracks whether the item is completed
+   - Type: Boolean attribute
+   - Description: The attribute that tracks whether the item is completed
 
 4. **New Item Text Attribute** (optional)
-    - Type: String attribute
-    - Description: Attribute to store the new item text before executing the add action
+   - Type: String attribute
+   - Description: Attribute to store the new item text before executing the add action
 
 ### Action Properties
 
 5. **On Add Action** (optional)
 
-    - Type: Action
-    - Description: Action to execute when adding a new todo item
+   - Type: Action
+   - Description: Action to execute when adding a new todo item
 
 6. **On Toggle Action** (optional)
 
-    - Type: Action (with data source)
-    - Description: Action to execute when toggling a todo item's completion status
+   - Type: Action (with data source)
+   - Description: Action to execute when toggling a todo item's completion status
 
 7. **On Edit Action** (optional)
 
-    - Type: Action (with data source)
-    - Description: Action to execute when editing a todo item (triggered by edit button)
+   - Type: Action (with data source)
+   - Description: Action to execute when editing a todo item (triggered by edit button)
 
 8. **On Delete Action** (optional)
-    - Type: Action (with data source)
-    - Description: Action to execute when deleting a todo item
+   - Type: Action (with data source)
+   - Description: Action to execute when deleting a todo item
 
 ### Appearance Properties
 
 9. **Show Add Button** (default: true)
 
-    - Type: Boolean
-    - Description: Whether to show the input field and add button for new items
+   - Type: Boolean
+   - Description: Whether to show the input field and add button for new items
 
 10. **New Item Placeholder** (optional)
     - Type: String
@@ -73,8 +76,8 @@ capabilities.
 
 To use this widget, your domain model should include an entity with at least:
 
--   A **string attribute** for the todo item title/text
--   A **boolean attribute** to track completion status
+- A **string attribute** for the todo item title/text
+- A **boolean attribute** to track completion status
 
 Example entity structure:
 
@@ -90,16 +93,16 @@ Entity: TodoItem
 
 ### Action Context
 
--   **Toggle, Edit, and Delete actions** are configured with a data source, meaning they automatically receive the
-    specific TodoItem as a parameter
--   **Add action** works at the entity level and uses the New Item Text Attribute to get the user input
--   The widget handles passing the correct object context to each action
+- **Toggle, Edit, and Delete actions** are configured with a data source, meaning they automatically receive the
+  specific TodoItem as a parameter
+- **Add action** works at the entity level and uses the New Item Text Attribute to get the user input
+- The widget handles passing the correct object context to each action
 
 ### Attribute Handling
 
--   The widget **does not directly modify attributes** linked to data sources (this is a Mendix platform limitation)
--   All attribute changes must be handled in your microflows/nanoflows
--   The New Item Text Attribute is used to pass user input to the Add action
+- The widget **does not directly modify attributes** linked to data sources (this is a Mendix platform limitation)
+- All attribute changes must be handled in your microflows/nanoflows
+- The New Item Text Attribute is used to pass user input to the Add action
 
 ## Actions Setup
 
@@ -170,37 +173,37 @@ Activities:
 
 The widget includes built-in CSS classes that can be customized:
 
--   `.todo-list-widget` - Main container with card-style design
--   `.todo-add-section` - Add new item section with background
--   `.todo-input` - Input field for new items with focus states
--   `.todo-add-button` - Add button with hover effects
--   `.todo-items-container` - List container with padding
--   `.todo-items-list` - Unordered list element
--   `.todo-item` - Individual todo item cards with borders
--   `.todo-item.completed` - Completed items with different styling
--   `.todo-item-content` - Inner content container with flexbox layout
--   `.todo-item-label` - Label containing checkbox and text
--   `.todo-checkbox` - Checkboxes with custom accent color
--   `.todo-item-text` - Item text with line-through when completed
--   `.todo-item-actions` - Action buttons container (hidden by default)
--   `.todo-action-btn` - Base class for edit/delete buttons
--   `.todo-edit-btn` - Edit button with blue hover effect
--   `.todo-delete-btn` - Delete button with red hover effect
--   `.todo-empty-state` - Empty state message with dashed border
+- `.todo-list-widget` - Main container with card-style design
+- `.todo-add-section` - Add new item section with background
+- `.todo-input` - Input field for new items with focus states
+- `.todo-add-button` - Add button with hover effects
+- `.todo-items-container` - List container with padding
+- `.todo-items-list` - Unordered list element
+- `.todo-item` - Individual todo item cards with borders
+- `.todo-item.completed` - Completed items with different styling
+- `.todo-item-content` - Inner content container with flexbox layout
+- `.todo-item-label` - Label containing checkbox and text
+- `.todo-checkbox` - Checkboxes with custom accent color
+- `.todo-item-text` - Item text with line-through when completed
+- `.todo-item-actions` - Action buttons container (hidden by default)
+- `.todo-action-btn` - Base class for edit/delete buttons
+- `.todo-edit-btn` - Edit button with blue hover effect
+- `.todo-delete-btn` - Delete button with red hover effect
+- `.todo-empty-state` - Empty state message with dashed border
 
 ### UI Features
 
--   **Hover Effects**: Items lift with shadow, action buttons appear on hover
--   **Smooth Transitions**: All interactive elements have 0.2s ease transitions
--   **Modern Design**: Card-based layout with rounded corners and subtle shadows
--   **Mobile Responsive**: Adapts layout and touch targets for mobile devices
+- **Hover Effects**: Items lift with shadow, action buttons appear on hover
+- **Smooth Transitions**: All interactive elements have 0.2s ease transitions
+- **Modern Design**: Card-based layout with rounded corners and subtle shadows
+- **Mobile Responsive**: Adapts layout and touch targets for mobile devices
 
 ## Development
 
 ### Prerequisites
 
--   Node.js (version 16 or higher)
--   Mendix Studio Pro
+- Node.js (version 16 or higher)
+- Mendix Studio Pro
 
 ### Building
 
@@ -224,9 +227,9 @@ npm run lint:fix
 
 ## Browser Support
 
--   Modern browsers (Chrome, Firefox, Safari, Edge)
--   Mobile browsers (iOS Safari, Chrome Mobile)
--   IE11+ (with polyfills)
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- IE11+ (with polyfills)
 
 ## License
 
