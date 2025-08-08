@@ -10,31 +10,32 @@
 export function formatRelativeDate(date: Date): string {
   const now = new Date();
   const diffInMs = now.getTime() - date.getTime();
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  const absDiffInDays = Math.abs(Math.floor(diffInMs / (1000 * 60 * 60 * 24)));
   const diffInHours = Math.floor(diffInMs / (1000 * 60 * 60));
   const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
+  const isInFuture = diffInMs < 0;
 
   // Same day
-  if (diffInDays === 0) {
-    if (diffInMinutes < 1) {
+  if (absDiffInDays === 0) {
+    if (Math.abs(diffInMinutes) < 1) {
       return "Just now";
-    } else if (diffInMinutes < 60) {
-      return `${diffInMinutes}m ago`;
-    } else if (diffInHours < 24) {
+    } else if (Math.abs(diffInMinutes) < 60) {
+      return isInFuture ? `In ${Math.abs(diffInMinutes)}m` : `${Math.abs(diffInMinutes)}m ago`;
+    } else if (Math.abs(diffInHours) < 24) {
       const timeStr = date.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
       return `Today ${timeStr}`;
     }
     return "Today";
   }
 
-  // Yesterday
-  if (diffInDays === 1) {
+  // Yesterday or Tomorrow
+  if (absDiffInDays === 1) {
     const timeStr = date.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
-    return `Yesterday ${timeStr}`;
+    return isInFuture ? `Tomorrow ${timeStr}` : `Yesterday ${timeStr}`;
   }
 
-  // Within the last week
-  if (diffInDays < 7) {
+  // Within the last/next week
+  if (absDiffInDays < 7) {
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const timeStr = date.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
     return `${dayNames[date.getDay()]} ${timeStr}`;
@@ -42,6 +43,11 @@ export function formatRelativeDate(date: Date): string {
 
   // Within the current year
   if (date.getFullYear() === now.getFullYear()) {
+    // For dates in different months, show full month name for clarity
+    if (date.getMonth() !== now.getMonth()) {
+      return date.toLocaleDateString(undefined, { month: "long", day: "numeric" });
+    }
+    // Same month, use short format
     return date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
   }
 
