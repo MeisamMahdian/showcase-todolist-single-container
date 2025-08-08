@@ -46,14 +46,14 @@
                 </attributeTypes>
             </property>
             <property key="ownerAttribute" type="attribute" dataSource="todoItems" required="false">
-                <caption>Owner Attribute</caption>
+                <caption>Owner Title</caption>
                 <description>String attribute showing who created the todo item (displayed in hover tooltip)</description>
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
             <property key="changedByAttribute" type="attribute" dataSource="todoItems" required="false">
-                <caption>Changed By Attribute</caption>
+                <caption>Changed By Title</caption>
                 <description>String attribute showing who last modified the todo item (displayed in hover tooltip)</description>
                 <attributeTypes>
                     <attributeType name="String" />
